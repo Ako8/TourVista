@@ -36,7 +36,7 @@ function ThemeSwitcher() {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 z-[60] glassmorphism rounded-xl">
+    <div className="fixed top-4 right-4 z-[60] glassmorphism rounded-xl">
       <div className="flex items-center gap-2 p-2">
         <button
           onClick={() => handleChange("light")}
@@ -73,7 +73,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <Router />
-        <ThemeSwitcher />
+        {/* <ThemeSwitcher /> */}
       </TooltipProvider>
     </QueryClientProvider>
   );

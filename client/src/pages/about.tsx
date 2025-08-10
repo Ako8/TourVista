@@ -114,7 +114,7 @@ export default function About() {
             <span className="font-medium">Back to Tour</span>
           </Link>
           
-          <div className="flex items-center space-x-3">
+          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
               <Mountain className="text-white w-5 h-5" />
             </div>
@@ -122,7 +122,7 @@ export default function About() {
               <h1 className="font-bold">Glamp Peaks Mestia</h1>
               <p className="text-xs text-gray-300">Luxury Glamping</p>
             </div>
-          </div>
+          </Link>
         </div>
       </header>
 
@@ -377,10 +377,15 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="aspect-square bg-gradient-to-br from-green-900/20 to-blue-900/20 rounded-2xl overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <MapPin className="w-24 h-24 text-blue-400 opacity-50" />
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2914.4153716793608!2d42.75799799999999!3d43.074762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDPCsDA0JzI5LjEiTiA0MsKwNDUnMjguOCJF!5e0!3m2!1sen!2sge!4v1754857354132!5m2!1sen!2sge" 
+                  width="100%" 
+                  height="100%" 
+                  style={{border:0}} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </motion.section>
