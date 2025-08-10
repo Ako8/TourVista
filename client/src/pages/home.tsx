@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { 
-  Menu, 
-  X, 
-  Mountain, 
-  House, 
-  Bed, 
-  Trees, 
-  UtensilsCrossed, 
-  Waves, 
+import {
+  Menu,
+  X,
+  Mountain,
+  House,
+  Bed,
+  Trees,
+  UtensilsCrossed,
+  Waves,
   Flame,
   Phone,
   MapPin,
-  Star
+  Star,
 } from "lucide-react";
 import { FaFacebook, FaInstagram, FaAirbnb } from "react-icons/fa";
 import { HiGlobeAlt } from "react-icons/hi";
@@ -31,7 +31,12 @@ const rooms: Room[] = [
   { id: "hn48x", name: "Glamping Domes", icon: House, color: "text-green-400" },
   { id: "hn48C", name: "Interior View", icon: Bed, color: "text-purple-400" },
   { id: "hn48z", name: "Forest Area", icon: Trees, color: "text-emerald-400" },
-  { id: "hn4xc", name: "Dining Area", icon: UtensilsCrossed, color: "text-orange-400" },
+  {
+    id: "hn4xc",
+    name: "Dining Area",
+    icon: UtensilsCrossed,
+    color: "text-orange-400",
+  },
   { id: "hn4g5", name: "Wellness Area", icon: Waves, color: "text-cyan-400" },
   { id: "hn4gh", name: "Fire Pit", icon: Flame, color: "text-red-400" },
 ];
@@ -69,10 +74,14 @@ export default function Home() {
     const handleClickOutside = (event: MouseEvent) => {
       const sidebar = document.getElementById("sidebar");
       const toggle = document.getElementById("sidebarToggle");
-      
-      if (sidebarOpen && sidebar && toggle && 
-          !sidebar.contains(event.target as Node) && 
-          !toggle.contains(event.target as Node)) {
+
+      if (
+        sidebarOpen &&
+        sidebar &&
+        toggle &&
+        !sidebar.contains(event.target as Node) &&
+        !toggle.contains(event.target as Node)
+      ) {
         setSidebarOpen(false);
       }
     };
@@ -81,7 +90,7 @@ export default function Home() {
     return () => document.removeEventListener("click", handleClickOutside);
   }, [sidebarOpen]);
 
-  const kuulaUrl = `https://kuula.co/share/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=1&inst=0`;
+  const kuulaUrl = `https://kuula.co/share/hn48j/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=5&inst=0`;
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
@@ -102,7 +111,7 @@ export default function Home() {
         id="sidebarToggle"
         onClick={toggleSidebar}
         className={`fixed top-4 glassmorphism glassmorphism-hover p-3 rounded-lg z-50 transition-all duration-200 ${
-          sidebarOpen ? 'left-[21rem] lg:left-[25rem]' : 'left-4'
+          sidebarOpen ? "left-[21rem] lg:left-[25rem]" : "left-4"
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -133,11 +142,15 @@ export default function Home() {
                     <Mountain className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <h1 className="text-xl font-bold text-white">Glamp Peaks</h1>
+                    <h1 className="text-xl font-bold text-white">
+                      Glamp Peaks
+                    </h1>
                     <p className="text-sm text-gray-300">Mestia</p>
                   </div>
                 </div>
-                <p className="text-gray-300 text-sm">Luxury Glamping Experience in Svaneti</p>
+                <p className="text-gray-300 text-sm">
+                  Luxury Glamping Experience in Svaneti
+                </p>
               </div>
 
               {/* Navigation Menu */}
@@ -145,19 +158,19 @@ export default function Home() {
                 <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">
                   Virtual Tour
                 </h3>
-                
+
                 <div className="space-y-2">
                   {rooms.map((room) => {
                     const IconComponent = room.icon;
                     const isActive = selectedRoom === room.id;
-                    
+
                     return (
                       <motion.button
                         key={room.id}
                         onClick={() => selectRoom(room.id)}
                         className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
-                          isActive 
-                            ? "bg-white/20 border-white/30" 
+                          isActive
+                            ? "bg-white/20 border-white/30"
                             : "border-transparent hover:bg-white/10 hover:border-white/20"
                         }`}
                         whileHover={{ scale: 1.02 }}
@@ -165,7 +178,9 @@ export default function Home() {
                       >
                         <div className="flex items-center space-x-3">
                           <IconComponent className={`${room.color} w-5 h-5`} />
-                          <span className="text-white font-medium">{room.name}</span>
+                          <span className="text-white font-medium">
+                            {room.name}
+                          </span>
                         </div>
                       </motion.button>
                     );
@@ -185,8 +200,8 @@ export default function Home() {
                     <span>4.9 · Luxury Glamping</span>
                   </div>
                 </div>
-                
-                <Link 
+
+                <Link
                   href="/about"
                   className="block w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-all text-center"
                 >
@@ -210,7 +225,6 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 right-0 glassmorphism z-30">
         <div className="px-4 py-3 lg:px-6 lg:py-4">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
-            
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
               <div className="flex items-center space-x-2 text-sm">
