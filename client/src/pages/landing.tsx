@@ -14,7 +14,7 @@ export default function Landing() {
         preload="auto"
         onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
       >
-        <source src="glamp-peaks.mp4" type="video/mp4" />
+        <source src="/@assets/glamp-peaks_1754849848766.mp4" type="video/mp4" />
 
       </video>
 
