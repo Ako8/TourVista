@@ -110,7 +110,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-black text-white overflow-hidden;
+    @apply font-sans antialiased bg-black text-white overflow-x-hidden;
     font-family: 'Inter', sans-serif;
   }
 }
@@ -124,5 +124,27 @@
   
   .glassmorphism-hover:hover {
     background: var(--glass-hover);
+  }
+
+  /* Custom scrollbar styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+  }
+
+  /* Firefox */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
   }
 }

@@ -6,7 +6,6 @@ import {
   X,
   Mountain,
   House,
-  Bed,
   Trees,
   UtensilsCrossed,
   Waves,
@@ -24,22 +23,20 @@ interface Room {
   name: string;
   icon: any;
   color: string;
+  kuula: string;
 }
 
 const rooms: Room[] = [
-  { id: "71r4N", name: "Overview", icon: Mountain, color: "text-blue-400" },
-  { id: "hn48x", name: "Glamping Domes", icon: House, color: "text-green-400" },
-  { id: "hn48C", name: "Interior View", icon: Bed, color: "text-purple-400" },
-  { id: "hn48z", name: "Forest Area", icon: Trees, color: "text-emerald-400" },
-  {
-    id: "hn4xc",
-    name: "Dining Area",
-    icon: UtensilsCrossed,
-    color: "text-orange-400",
-  },
-  { id: "hn4g5", name: "Wellness Area", icon: Waves, color: "text-cyan-400" },
-  { id: "hn4gh", name: "Fire Pit", icon: Flame, color: "text-red-400" },
-];
+  { id: "71r4N", name: "Glamping Domes", icon: Mountain, color: "text-blue-400", kuula: "https://kuula.co/share/hn48c/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x2", name: "Dome 1", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn4g0/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x3", name: "Dome 2", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x4", name: "Dome 3", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x5", name: "Dome 4", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x6", name: "Dome 5", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+
+
+
+];  
 
 export default function Home() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -47,7 +44,8 @@ export default function Home() {
   const isMobile = useIsMobile();
 
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
+    console.log("toggleSidebar", sidebarOpen);
+    setSidebarOpen((prev) => !prev);
   };
 
   const selectRoom = (roomId: string) => {
@@ -69,41 +67,20 @@ export default function Home() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [sidebarOpen]);
 
-  // Close sidebar when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const sidebar = document.getElementById("sidebar");
-      const toggle = document.getElementById("sidebarToggle");
-
-      if (
-        sidebarOpen &&
-        sidebar &&
-        toggle &&
-        !sidebar.contains(event.target as Node) &&
-        !toggle.contains(event.target as Node)
-      ) {
-        setSidebarOpen(false);
-      }
-    };
-
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [sidebarOpen]);
-
-  const kuulaUrl = `https://kuula.co/share/hn48j/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=5&inst=0`;
+  const activeRoom = rooms.find((room) => room.id === selectedRoom) ?? rooms[0];
+  const kuulaUrl = activeRoom.kuula;
 
   return (
     <div className="relative w-full h-screen bg-black text-white overflow-hidden">
       {/* Kuula 360° Tour Iframe */}
       <iframe
+        key={selectedRoom}
         src={kuulaUrl}
         className="w-full h-screen border-none"
         allow="xr-spatial-tracking; gyroscope; accelerometer; fullscreen"
         allowFullScreen
-        scrolling="no"
         title="360° Virtual Tour"
         referrerPolicy="no-referrer-when-downgrade"
-        frameBorder="0"
       />
 
       {/* Sidebar Toggle Button */}
@@ -154,7 +131,7 @@ export default function Home() {
               </div>
 
               {/* Navigation Menu */}
-              <nav className="flex-1 overflow-y-auto">
+              <nav className="flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar">
                 <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">
                   Virtual Tour
                 </h3>
@@ -212,14 +189,6 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* VR Mode Indicator */}
-      <div className="fixed top-4 right-4 glassmorphism p-2 rounded-lg z-40">
-        <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-cyan-400 rounded-full animate-pulse" />
-          <span className="text-xs text-gray-300">VR Ready</span>
-        </div>
-      </div>
 
       {/* Bottom Social Bar */}
       <div className="fixed bottom-0 left-0 right-0 glassmorphism z-30">

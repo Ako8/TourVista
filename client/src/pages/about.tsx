@@ -20,6 +20,14 @@ import {
   Mail
 } from "lucide-react";
 import { Link } from "wouter";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const features = [
   { icon: Mountain, title: "Mountain Views", description: "Stunning panoramic views of the Caucasus Mountains" },
@@ -60,6 +68,39 @@ const stats = [
   { number: "100%", label: "Satisfaction", icon: Heart }
 ];
 
+const galleryImages = [
+  {
+    src:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714347215.jpg?k=ee0c520e7be00ff5bc4f37ef777764c1a0c435be0dc9539f03af7ca8ac8a0321&o=",
+    alt: "Cozy glamping dome interior",
+  },
+  {
+    src:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714346758.jpg?k=99e1bf525b687b2fa1a13ebbb823509475fbe988e87a44b8a20774abcfde64d0&o=",
+    alt: "Caucasus mountain sunrise",
+  },
+  {
+    src:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714346765.jpg?k=39116091486256b30bb37422c909fdfca630f5202ab967c9a3847a2186e3ef28&o=",
+    alt: "Forest trail near the site",
+  },
+  {
+    src:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714347219.jpg?k=ed38dacf48b82532321fcf501eb56026e20aa51acb34722b99092a8faa82cc56&o=",
+    alt: "Evening campfire ambiance",
+  },
+  {
+    src:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714347212.jpg?k=7f196ec84ab1730073fd32a2fe783773d2bb895ff0b9cf57cc5f19876004ef4d&o=",
+    alt: "River and valley view",
+  },
+  {
+    src:
+      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714350873.jpg?k=bf58422fe5cedb7493085c7490399e606b93a96d331b4fbf028b27a138a1ab4f&o=",
+    alt: "Starry night over domes",
+  },
+];
+
 export default function About() {
   const [activeSection, setActiveSection] = useState("story");
 
@@ -68,7 +109,7 @@ export default function About() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 glassmorphism z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+          <Link href="/home" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <ArrowLeft className="w-5 h-5" />
             <span className="font-medium">Back to Tour</span>
           </Link>
@@ -84,39 +125,6 @@ export default function About() {
           </div>
         </div>
       </header>
-
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 to-blue-900/20" />
-        <div className="absolute inset-0 bg-black/50" />
-        
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <svg width="60" height="60" viewBox="0 0 60 60" className="fill-white">
-            <g>
-              <circle cx="30" cy="30" r="2"/>
-            </g>
-          </svg>
-        </div>
-
-        <div className="relative text-center max-w-4xl mx-auto px-4 pt-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-6xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-              Glamp Peaks
-            </h1>
-            <h2 className="text-2xl lg:text-4xl font-light mb-8 text-gray-200">
-              Where Luxury Meets Adventure
-            </h2>
-            <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Nestled in the heart of Svaneti, Georgia, experience the perfect blend of comfort and wilderness in our unique geodesic domes.
-            </p>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Navigation Tabs */}
       <section className="sticky top-20 glassmorphism z-40">
@@ -146,7 +154,7 @@ export default function About() {
       </section>
 
       {/* Content Sections */}
-      <main className="max-w-7xl mx-auto px-4 py-16">
+      <main className="max-w-7xl mx-auto px-4 py-16 pt-28">
         {activeSection === "story" && (
           <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -172,9 +180,49 @@ export default function About() {
               <div className="relative">
                 <div className="aspect-video bg-gradient-to-br from-green-900/20 to-blue-900/20 rounded-2xl overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center">
-                    <Mountain className="w-24 h-24 text-green-400 opacity-50" />
+                      <img
+                        src={"https://cf.bstatic.com/xdata/images/hotel/max1024x768/714348808.jpg?k=66828314678bc6706840006edd24cb3811dc7ccd84acd14104b87953911eb5fe&o="}
+                        alt={"Glamp Peaks Mestia"}
+                        className="aspect-[4/3] w-full h-full object-cover rounded-xl hover:opacity-90 transition"
+                        loading="lazy"
+                      />
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Dynamic Image Gallery */}
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <h4 className="text-2xl font-semibold">Gallery</h4>
+                <p className="text-sm text-gray-400">Tap an image to view full size</p>
+              </div>
+              <div className="relative">
+                <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+                  <CarouselContent>
+                    {galleryImages.map((image) => (
+                      <CarouselItem key={image.src} className="md:basis-1/2 lg:basis-1/3">
+                        <div className="p-1">
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <img
+                                src={image.src}
+                                alt={image.alt}
+                                className="aspect-[4/3] w-full h-full object-cover rounded-xl hover:opacity-90 transition"
+                                loading="lazy"
+                              />
+                            </DialogTrigger>
+                            <DialogContent className="max-w-5xl bg-black/90 p-0 border-white/10">
+                              <img src={image.src} alt={image.alt} className="w-full h-auto rounded-md" />
+                            </DialogContent>
+                          </Dialog>
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="bg-white/10 border-white/20 text-white hover:bg-white/20" />
+                  <CarouselNext className="bg-white/10 border-white/20 text-white hover:bg-white/20" />
+                </Carousel>
               </div>
             </div>
 
