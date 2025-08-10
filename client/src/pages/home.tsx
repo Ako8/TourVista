@@ -28,11 +28,11 @@ interface Room {
 
 const rooms: Room[] = [
   { id: "71r4N", name: "Glamping Domes", icon: Mountain, color: "text-blue-400", kuula: "https://kuula.co/share/hn48c/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
-  { id: "hn48x2", name: "Dome 1", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn4g0/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
-  { id: "hn48x3", name: "Dome 2", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
-  { id: "hn48x4", name: "Dome 3", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
-  { id: "hn48x5", name: "Dome 4", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
-  { id: "hn48x6", name: "Dome 5", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48c/collection/hn48x?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x2", name: "Dome 1", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48x/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x3", name: "Dome 2", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn48z/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x4", name: "Dome 3", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn4g5/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x5", name: "Dome 4", icon: House, color: "text-green-400", kuula: "https://kuula.co/share/hn4g6/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
+  { id: "hn48x6", name: "Shared Area", icon: UtensilsCrossed, color: "text-blue-400", kuula: "https://kuula.co/share/hn4gB/collection/71r4N?logo=-1&info=0&fs=0&vr=0&gyro=0&thumbs=4&inst=0" },
 
 
 
