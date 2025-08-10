@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Compass, Info } from "lucide-react";
+import videoSrc from "@assets/glamp-peaks_1754849848766.mp4";
 
 export default function Landing() {
   return (
@@ -14,7 +15,7 @@ export default function Landing() {
         preload="auto"
         onCanPlay={(e) => e.currentTarget.play().catch(() => {})}
       >
-        <source src="/@assets/glamp-peaks_1754849848766.mp4" type="video/mp4" />
+        <source src={videoSrc} type="video/mp4" />
 
       </video>
 
