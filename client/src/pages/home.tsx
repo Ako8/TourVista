@@ -90,7 +90,7 @@ export default function Home() {
         id="sidebarToggle"
         onClick={toggleSidebar}
         className={`fixed top-4 glassmorphism glassmorphism-hover p-3 rounded-lg z-50 transition-all duration-200 ${
-          sidebarOpen ? "left-[23rem] lg:left-[21rem]" : "left-4"
+          sidebarOpen ? "left-[21rem] lg:left-[21rem]" : "left-4"
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}

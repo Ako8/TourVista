@@ -72,32 +72,31 @@ const stats = [
 const galleryImages = [
   {
     src:
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714347215.jpg?k=ee0c520e7be00ff5bc4f37ef777764c1a0c435be0dc9539f03af7ca8ac8a0321&o=",
+      "src/assets/IMG_7070.jpeg",
     alt: "Cozy glamping dome interior",
   },
   {
-    src:
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714346758.jpg?k=99e1bf525b687b2fa1a13ebbb823509475fbe988e87a44b8a20774abcfde64d0&o=",
+    src: "src/assets/becha2_7 (2).JPG",
     alt: "Caucasus mountain sunrise",
   },
   {
     src:
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714346765.jpg?k=39116091486256b30bb37422c909fdfca630f5202ab967c9a3847a2186e3ef28&o=",
+      "src/assets/IMG_20250711_075928_00_224_2025-07-13_22-46-01_screenshot.jpg",
     alt: "Forest trail near the site",
   },
   {
     src:
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714347219.jpg?k=ed38dacf48b82532321fcf501eb56026e20aa51acb34722b99092a8faa82cc56&o=",
+      "src/assets/glamping2_13.JPG",
     alt: "Evening campfire ambiance",
   },
   {
     src:
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714347212.jpg?k=7f196ec84ab1730073fd32a2fe783773d2bb895ff0b9cf57cc5f19876004ef4d&o=",
+      "src/assets/glamping2_15.JPG",
     alt: "River and valley view",
   },
   {
     src:
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/714350873.jpg?k=bf58422fe5cedb7493085c7490399e606b93a96d331b4fbf028b27a138a1ab4f&o=",
+      "src/assets/IMG_2452.jpeg",
     alt: "Starry night over domes",
   },
 ];
@@ -180,7 +179,7 @@ export default function About() {
                 <div className="aspect-video bg-gradient-to-br from-green-900/20 to-blue-900/20 rounded-2xl overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center">
                       <img
-                        src={"https://cf.bstatic.com/xdata/images/hotel/max1024x768/714348808.jpg?k=66828314678bc6706840006edd24cb3811dc7ccd84acd14104b87953911eb5fe&o="}
+                        src={"src/assets/becha2_4.JPG"}
                         alt={"Glamp Peaks Mestia"}
                         className="w-full h-full object-cover rounded-xl hover:opacity-90 transition"
                         loading="lazy"
