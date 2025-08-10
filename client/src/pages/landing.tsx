@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Compass, Info } from "lucide-react";
-import videoSrc from "@assets/glamp-peaks_1754849848766.mp4";
+import videoSrc from "@/assets/glap-glamp.mp4";
 
 export default function Landing() {
   return (

@@ -17,6 +17,8 @@ import {
 import { FaFacebook, FaInstagram, FaAirbnb } from "react-icons/fa";
 import { HiGlobeAlt } from "react-icons/hi";
 import { useIsMobile } from "@/hooks/use-mobile";
+import logo from "@/assets/logo.png";
+
 
 interface Room {
   id: string;
@@ -88,7 +90,7 @@ export default function Home() {
         id="sidebarToggle"
         onClick={toggleSidebar}
         className={`fixed top-4 glassmorphism glassmorphism-hover p-3 rounded-lg z-50 transition-all duration-200 ${
-          sidebarOpen ? "left-[21rem] lg:left-[25rem]" : "left-4"
+          sidebarOpen ? "left-[23rem] lg:left-[21rem]" : "left-4"
         }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -108,36 +110,21 @@ export default function Home() {
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed left-0 top-0 h-full w-80 lg:w-96 glassmorphism z-40"
+            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            className="fixed left-0 top-0 h-full w-full sm:w-80 lg:w-86 glassmorphism z-40"
           >
             <div className="p-6 h-full flex flex-col">
               {/* Header with Logo */}
-              <div className="mb-8">
+              <div className="flex justify-center pb-4">
                 <Link href="/" className="block">
-                  <div className="flex items-center space-x-3 mb-3 hover:opacity-80 transition-opacity cursor-pointer">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-                      <Mountain className="text-white w-6 h-6" />
-                    </div>
-                    <div>
-                      <h1 className="text-xl font-bold text-foreground">
-                        Glamp Peaks
-                      </h1>
-                      <p className="text-sm text-muted-foreground">Mestia</p>
-                    </div>
+                  <div className="flex items-center hover:opacity-80 transition-opacity cursor-pointer">
+                    <img src={logo} alt="Glamp Peaks" className="h-[19vh] w-auto" />
                   </div>
                 </Link>
-                <p className="text-muted-foreground text-sm">
-                  Luxury Glamping Experience in Svaneti
-                </p>
               </div>
 
               {/* Navigation Menu */}
               <nav className="flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar">
-                <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-4">
-                  Virtual Tour
-                </h3>
-
                 <div className="space-y-2">
                   {rooms.map((room) => {
                     const IconComponent = room.icon;
@@ -182,9 +169,9 @@ export default function Home() {
 
                 <Link
                   href="/about"
-                  className="block w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-all text-center"
+                  className="block w-full bg-gradient-to-r from-gray-800 to-black hover:from-black hover:to-gray-800 text-white font-medium py-3 px-4 rounded-lg transition-all text-center"
                 >
-                  Learn More About Us
+                  About Glamp Peaks Mestia
                 </Link>
               </div>
             </div>
@@ -193,11 +180,13 @@ export default function Home() {
       </AnimatePresence>
 
       {/* Bottom Social Bar */}
-      <div className="fixed bottom-0 left-0 right-0 glassmorphism z-30">
+      <div className={`fixed bottom-0 glassmorphism z-30 transition-all duration-300 ${
+        sidebarOpen ? "left-80 lg:left-86" : "left-0"
+      } right-0`}>
         <div className="px-4 py-3 lg:px-6 lg:py-4">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
-            {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-1 lg:space-y-0">
+            {/* Contact Info - Desktop Only */}
+            <div className="hidden lg:flex lg:items-center lg:space-x-6">
               <Link href="/" className="flex items-center space-x-2 text-sm hover:opacity-80 transition-opacity">
                 <Mountain className="text-purple-400 w-4 h-4" />
                 <span className="text-foreground">Home</span>
@@ -218,22 +207,21 @@ export default function Home() {
               <div className="flex items-center space-x-3">
                 <motion.a
                   href="https://www.facebook.com/profile.php?id=61572584098310"
-                  className="text-muted-foreground hover:text-blue-500 transition-colors duration-200"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="text-muted-foreground hover:text-blue-500 transition-colors duration-200 p-2 rounded-full"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
                   target="_blank"
-
                 >
-                  <FaFacebook className="text-lg" />
+                  <FaFacebook className="text-2xl" />
                 </motion.a>
                 <motion.a 
                   href="https://www.instagram.com/glamp_peaks_mestia/"
-                  className="text-muted-foreground hover:text-pink-500 transition-colors duration-200"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="text-muted-foreground hover:text-pink-500 transition-colors duration-200 p-2 rounded-full"
+                  whileHover={{ scale: 1.15 }}
+                  whileTap={{ scale: 0.95 }}
                   target="_blank"
                 >
-                  <FaInstagram className="text-lg" />
+                  <FaInstagram className="text-2xl" />
                 </motion.a>
               </div>
 

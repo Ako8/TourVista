@@ -28,6 +28,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import logo from "@/assets/logo.png";
 
 const features = [
   { icon: Mountain, title: "Mountain Views", description: "Stunning panoramic views of the Caucasus Mountains" },
@@ -115,9 +116,7 @@ export default function About() {
           </Link>
           
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-              <Mountain className="text-white w-5 h-5" />
-            </div>
+            <img src={logo} alt="Glamp Peaks" className="h-10 w-auto" />
             <div className="hidden sm:block">
               <h1 className="font-bold">Glamp Peaks Mestia</h1>
               <p className="text-xs text-gray-300">Luxury Glamping</p>
@@ -183,8 +182,9 @@ export default function About() {
                       <img
                         src={"https://cf.bstatic.com/xdata/images/hotel/max1024x768/714348808.jpg?k=66828314678bc6706840006edd24cb3811dc7ccd84acd14104b87953911eb5fe&o="}
                         alt={"Glamp Peaks Mestia"}
-                        className="aspect-[4/3] w-full h-full object-cover rounded-xl hover:opacity-90 transition"
+                        className="w-full h-full object-cover rounded-xl hover:opacity-90 transition"
                         loading="lazy"
+                        style={{ maxWidth: '100%', height: 'auto' }}
                       />
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export default function About() {
                     transition={{ delay: index * 0.1 }}
                     className="text-center"
                   >
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-gray-800 to-black rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
@@ -274,7 +274,7 @@ export default function About() {
                     transition={{ delay: index * 0.1 }}
                     className="glassmorphism p-6 rounded-2xl hover:bg-white/10 transition-colors"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-black rounded-lg flex items-center justify-center mb-4">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="text-xl font-semibold mb-2">{feature.title}</h4>
@@ -315,7 +315,7 @@ export default function About() {
                   </div>
                   <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 bg-gradient-to-br from-gray-800 to-black rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
                         {testimonial.name.split(' ').map(n => n[0]).join('')}
                       </span>
@@ -347,7 +347,7 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                  <MapPin className="w-6 h-6 text-gray-800 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Mestia, Svaneti Region</h4>
                     <p className="text-muted-foreground">
@@ -357,7 +357,7 @@ export default function About() {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <Mountain className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
+                  <Mountain className="w-6 h-6 text-gray-800 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">UNESCO World Heritage</h4>
                     <p className="text-muted-foreground">
@@ -410,15 +410,15 @@ export default function About() {
                   <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <Phone className="w-5 h-5 text-green-400" />
+                      <Phone className="w-5 h-5 text-gray-800" />
                       <span>+995 123 456 789</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Mail className="w-5 h-5 text-blue-400" />
+                      <Mail className="w-5 h-5 text-gray-800" />
                       <span>info@glamppeaksmestia.ge</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <MapPin className="w-5 h-5 text-purple-400" />
+                      <MapPin className="w-5 h-5 text-gray-800" />
                       <span>Mestia, Svaneti Region, Georgia</span>
                     </div>
                   </div>
@@ -428,15 +428,15 @@ export default function About() {
                   <h4 className="text-xl font-semibold mb-4">Awards & Recognition</h4>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
-                      <Award className="w-5 h-5 text-yellow-400" />
+                      <Award className="w-5 h-5 text-gray-800" />
                       <span>Best Glamping Experience 2024</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Star className="w-5 h-5 text-yellow-400" />
+                      <Star className="w-5 h-5 text-gray-800" />
                       <span>TripAdvisor Certificate of Excellence</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Trees className="w-5 h-5 text-green-400" />
+                      <Trees className="w-5 h-5 text-gray-800" />
                       <span>Sustainable Tourism Award</span>
                     </div>
                   </div>
@@ -483,14 +483,8 @@ export default function About() {
       {/* Footer */}
       <footer className="glassmorphism mt-16">
         <div className="max-w-7xl mx-auto px-4 py-8 text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
-              <Mountain className="text-white w-4 h-4" />
-            </div>
-            <span className="font-bold">Glamp Peaks Mestia</span>
-          </div>
           <p className="text-muted-foreground text-sm">
-            © 2025 Glamp Peaks Mestia. All rights reserved. | Luxury Glamping in Svaneti, Georgia
+            © 2025 Glamp Peaks Mestia. All rights reserved. | Built & powered by <a href="https://resorter360.ge">Resorter360.ge</a>
           </p>
         </div>
       </footer>
