@@ -72,31 +72,31 @@ const stats = [
 const galleryImages = [
   {
     src:
-      "src/assets/IMG_7070.jpeg",
+      "./assets/IMG_7070.jpeg",
     alt: "Cozy glamping dome interior",
   },
   {
-    src: "src/assets/becha2_7 (2).JPG",
+    src: "./assets/becha2_7 (2).JPG",
     alt: "Caucasus mountain sunrise",
   },
   {
     src:
-      "src/assets/IMG_20250711_075928_00_224_2025-07-13_22-46-01_screenshot.jpg",
+      "./assets/IMG_20250711_075928_00_224_2025-07-13_22-46-01_screenshot.jpg",
     alt: "Forest trail near the site",
   },
   {
     src:
-      "src/assets/glamping2_13.JPG",
+      "./assets/glamping2_13.JPG",
     alt: "Evening campfire ambiance",
   },
   {
     src:
-      "src/assets/glamping2_15.JPG",
+      "./assets/glamping2_15.JPG",
     alt: "River and valley view",
   },
   {
     src:
-      "src/assets/IMG_2452.jpeg",
+      "./assets/IMG_2452.jpeg",
     alt: "Starry night over domes",
   },
 ];
@@ -179,7 +179,7 @@ export default function About() {
                 <div className="aspect-video bg-gradient-to-br from-green-900/20 to-blue-900/20 rounded-2xl overflow-hidden">
                   <div className="w-full h-full flex items-center justify-center">
                       <img
-                        src={"src/assets/becha2_4.JPG"}
+                        src={"./assets/becha2_4.JPG"}
                         alt={"Glamp Peaks Mestia"}
                         className="w-full h-full object-cover rounded-xl hover:opacity-90 transition"
                         loading="lazy"
