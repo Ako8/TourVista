@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "wouter";
 import { 
   Menu, 
   X, 
@@ -100,7 +101,9 @@ export default function Home() {
       <motion.button
         id="sidebarToggle"
         onClick={toggleSidebar}
-        className="fixed left-4 top-4 glassmorphism glassmorphism-hover p-3 rounded-lg z-50 transition-colors duration-200"
+        className={`fixed top-4 glassmorphism glassmorphism-hover p-3 rounded-lg z-50 transition-all duration-200 ${
+          sidebarOpen ? 'left-[21rem] lg:left-[25rem]' : 'left-4'
+        }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -123,10 +126,18 @@ export default function Home() {
             className="fixed left-0 top-0 h-full w-80 lg:w-96 glassmorphism z-40"
           >
             <div className="p-6 h-full flex flex-col">
-              {/* Header */}
+              {/* Header with Logo */}
               <div className="mb-8">
-                <h1 className="text-2xl font-bold text-white mb-2">Glamp Peaks Mestia</h1>
-                <p className="text-gray-300 text-sm">Luxury Glamping Experience</p>
+                <div className="flex items-center space-x-3 mb-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                    <Mountain className="text-white w-6 h-6" />
+                  </div>
+                  <div>
+                    <h1 className="text-xl font-bold text-white">Glamp Peaks</h1>
+                    <p className="text-sm text-gray-300">Mestia</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm">Luxury Glamping Experience in Svaneti</p>
               </div>
 
               {/* Navigation Menu */}
@@ -163,7 +174,7 @@ export default function Home() {
               </nav>
 
               {/* Footer Info */}
-              <div className="mt-8 pt-6 border-t border-white/20">
+              <div className="mt-8 pt-6 border-t border-white/20 space-y-4">
                 <div className="text-sm text-gray-300 space-y-2">
                   <div className="flex items-center space-x-2">
                     <MapPin className="text-blue-400 w-4 h-4" />
@@ -174,6 +185,13 @@ export default function Home() {
                     <span>4.9 · Luxury Glamping</span>
                   </div>
                 </div>
+                
+                <Link 
+                  href="/about"
+                  className="block w-full bg-gradient-to-r from-green-400 to-blue-500 hover:from-green-500 hover:to-blue-600 text-white font-medium py-3 px-4 rounded-lg transition-all text-center"
+                >
+                  Learn More About Us
+                </Link>
               </div>
             </div>
           </motion.div>
