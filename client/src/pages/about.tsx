@@ -105,7 +105,7 @@ export default function About() {
   const [activeSection, setActiveSection] = useState("story");
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 glassmorphism z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -142,8 +142,8 @@ export default function About() {
                 onClick={() => setActiveSection(tab.id)}
                 className={`px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap ${
                   activeSection === tab.id
-                    ? "bg-white/20 text-white"
-                    : "text-gray-400 hover:text-white hover:bg-white/10"
+                    ? "bg-foreground/10 text-foreground"
+                    : "text-muted-foreground hover:text-foreground hover:bg-foreground/5"
                 }`}
               >
                 {tab.label}
@@ -165,7 +165,7 @@ export default function About() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-4xl font-bold mb-6">Our Story</h3>
-                <div className="space-y-4 text-gray-300 leading-relaxed">
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
                     Born from a passion for adventure and sustainable tourism, Glamp Peaks Mestia represents a new way to experience the untamed beauty of Georgia's Svaneti region.
                   </p>
@@ -195,7 +195,7 @@ export default function About() {
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <h4 className="text-2xl font-semibold">Gallery</h4>
-                <p className="text-sm text-gray-400">Tap an image to view full size</p>
+                <p className="text-sm text-muted-foreground">Tap an image to view full size</p>
               </div>
               <div className="relative">
                 <Carousel className="w-full" opts={{ align: "start", loop: true }}>
@@ -220,8 +220,8 @@ export default function About() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="bg-white/10 border-white/20 text-white hover:bg-white/20" />
-                  <CarouselNext className="bg-white/10 border-white/20 text-white hover:bg-white/20" />
+                  <CarouselPrevious className="bg-foreground/10 border-foreground/20 text-foreground hover:bg-foreground/15" />
+                  <CarouselNext className="bg-foreground/10 border-foreground/20 text-foreground hover:bg-foreground/15" />
                 </Carousel>
               </div>
             </div>
@@ -241,8 +241,8 @@ export default function About() {
                     <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                    <div className="text-gray-400">{stat.label}</div>
+                    <div className="text-3xl font-bold text-foreground mb-2">{stat.number}</div>
+                    <div className="text-muted-foreground">{stat.label}</div>
                   </motion.div>
                 );
               })}
@@ -258,7 +258,7 @@ export default function About() {
           >
             <div className="text-center">
               <h3 className="text-4xl font-bold mb-4">Premium Features</h3>
-              <p className="text-gray-300 max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Every detail has been carefully crafted to ensure your stay is both comfortable and memorable.
               </p>
             </div>
@@ -278,7 +278,7 @@ export default function About() {
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
                     <h4 className="text-xl font-semibold mb-2">{feature.title}</h4>
-                    <p className="text-gray-300 text-sm">{feature.description}</p>
+                     <p className="text-muted-foreground text-sm">{feature.description}</p>
                   </motion.div>
                 );
               })}
@@ -294,7 +294,7 @@ export default function About() {
           >
             <div className="text-center">
               <h3 className="text-4xl font-bold mb-4">Guest Experiences</h3>
-              <p className="text-gray-300 max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Hear what our guests have to say about their unforgettable stays.
               </p>
             </div>
@@ -313,7 +313,7 @@ export default function About() {
                       <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                     ))}
                   </div>
-                  <p className="text-gray-300 mb-4 italic">"{testimonial.text}"</p>
+                  <p className="text-muted-foreground mb-4 italic">"{testimonial.text}"</p>
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-sm">
@@ -321,8 +321,8 @@ export default function About() {
                       </span>
                     </div>
                     <div>
-                      <div className="font-semibold text-white">{testimonial.name}</div>
-                      <div className="text-sm text-gray-400">{testimonial.country}</div>
+                      <div className="font-semibold text-foreground">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.country}</div>
                     </div>
                   </div>
                 </motion.div>
@@ -339,7 +339,7 @@ export default function About() {
           >
             <div className="text-center">
               <h3 className="text-4xl font-bold mb-4">Our Location</h3>
-              <p className="text-gray-300 max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Discover the pristine beauty of Svaneti, one of Georgia's most spectacular regions.
               </p>
             </div>
@@ -350,7 +350,7 @@ export default function About() {
                   <MapPin className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">Mestia, Svaneti Region</h4>
-                    <p className="text-gray-300">
+                    <p className="text-muted-foreground">
                       Located in the heart of Upper Svaneti, our glamping site offers unparalleled access to some of the most stunning mountain scenery in the Caucasus.
                     </p>
                   </div>
@@ -360,7 +360,7 @@ export default function About() {
                   <Mountain className="w-6 h-6 text-blue-400 mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-2">UNESCO World Heritage</h4>
-                    <p className="text-gray-300">
+                    <p className="text-muted-foreground">
                       Svaneti is recognized by UNESCO for its unique medieval architecture and pristine mountain landscapes.
                     </p>
                   </div>
@@ -368,7 +368,7 @@ export default function About() {
 
                 <div className="glassmorphism p-4 rounded-lg">
                   <h5 className="font-semibold mb-2">Getting Here</h5>
-                  <ul className="text-sm text-gray-300 space-y-1">
+                  <ul className="text-sm text-muted-foreground space-y-1">
                     <li>• 2.5 hours drive from Zugdidi</li>
                     <li>• 4 hours drive from Kutaisi</li>
                     <li>• 6 hours drive from Tbilisi</li>
@@ -394,7 +394,7 @@ export default function About() {
           >
             <div className="text-center">
               <h3 className="text-4xl font-bold mb-4">Get in Touch</h3>
-              <p className="text-gray-300 max-w-2xl mx-auto">
+              <p className="text-muted-foreground max-w-2xl mx-auto">
                 Ready to plan your adventure? We're here to help make your stay unforgettable.
               </p>
             </div>
@@ -445,21 +445,21 @@ export default function About() {
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                      className="w-full p-3 rounded-lg bg-white border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-blue-400"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
                       placeholder="Your Email"
-                      className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400"
+                      className="w-full p-3 rounded-lg bg-white border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-blue-400"
                     />
                   </div>
                   <div>
                     <textarea
                       rows={4}
                       placeholder="Your Message"
-                      className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 resize-none"
+                      className="w-full p-3 rounded-lg bg-white border border-border text-foreground placeholder-muted-foreground focus:outline-none focus:border-blue-400 resize-none"
                     />
                   </div>
                   <button
@@ -484,7 +484,7 @@ export default function About() {
             </div>
             <span className="font-bold">Glamp Peaks Mestia</span>
           </div>
-          <p className="text-gray-400 text-sm">
+          <p className="text-muted-foreground text-sm">
             © 2025 Glamp Peaks Mestia. All rights reserved. | Luxury Glamping in Svaneti, Georgia
           </p>
         </div>

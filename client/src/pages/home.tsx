@@ -71,7 +71,7 @@ export default function Home() {
   const kuulaUrl = activeRoom.kuula;
 
   return (
-    <div className="relative w-full h-screen bg-black text-white overflow-hidden">
+    <div className="relative w-full h-screen bg-background text-foreground overflow-hidden">
       {/* Kuula 360° Tour Iframe */}
       <iframe
         key={selectedRoom}
@@ -94,9 +94,9 @@ export default function Home() {
         whileTap={{ scale: 0.95 }}
       >
         {sidebarOpen ? (
-          <X className="text-white text-lg" />
+          <X className="text-foreground text-lg" />
         ) : (
-          <Menu className="text-white text-lg" />
+          <Menu className="text-foreground text-lg" />
         )}
       </motion.button>
 
@@ -119,13 +119,13 @@ export default function Home() {
                     <Mountain className="text-white w-6 h-6" />
                   </div>
                   <div>
-                    <h1 className="text-xl font-bold text-white">
+                    <h1 className="text-xl font-bold text-foreground">
                       Glamp Peaks
                     </h1>
-                    <p className="text-sm text-gray-300">Mestia</p>
+                    <p className="text-sm text-muted-foreground">Mestia</p>
                   </div>
                 </div>
-                <p className="text-gray-300 text-sm">
+                <p className="text-muted-foreground text-sm">
                   Luxury Glamping Experience in Svaneti
                 </p>
               </div>
@@ -147,15 +147,15 @@ export default function Home() {
                         onClick={() => selectRoom(room.id)}
                         className={`w-full text-left p-3 rounded-lg transition-all duration-200 border ${
                           isActive
-                            ? "bg-white/20 border-white/30"
-                            : "border-transparent hover:bg-white/10 hover:border-white/20"
+                            ? "bg-foreground/10 border-foreground/20"
+                            : "border-transparent hover:bg-foreground/5 hover:border-foreground/15"
                         }`}
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                       >
                         <div className="flex items-center space-x-3">
                           <IconComponent className={`${room.color} w-5 h-5`} />
-                          <span className="text-white font-medium">
+                          <span className="text-foreground font-medium">
                             {room.name}
                           </span>
                         </div>
@@ -166,15 +166,15 @@ export default function Home() {
               </nav>
 
               {/* Footer Info */}
-              <div className="mt-8 pt-6 border-t border-white/20 space-y-4">
+              <div className="mt-8 pt-6 border-t border-border space-y-4">
                 <div className="text-sm text-gray-300 space-y-2">
                   <div className="flex items-center space-x-2">
                     <MapPin className="text-blue-400 w-4 h-4" />
-                    <span>Mestia, Svaneti, Georgia</span>
+                    <span className="text-foreground">Mestia, Svaneti, Georgia</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Star className="text-yellow-400 w-4 h-4" />
-                    <span>4.9 · Luxury Glamping</span>
+                    <span className="text-foreground">4.9 · Luxury Glamping</span>
                   </div>
                 </div>
 
@@ -212,7 +212,7 @@ export default function Home() {
               <div className="flex items-center space-x-3">
                 <motion.a
                   href="#"
-                  className="text-gray-400 hover:text-blue-500 transition-colors duration-200"
+                  className="text-muted-foreground hover:text-blue-500 transition-colors duration-200"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -220,7 +220,7 @@ export default function Home() {
                 </motion.a>
                 <motion.a
                   href="#"
-                  className="text-gray-400 hover:text-pink-500 transition-colors duration-200"
+                  className="text-muted-foreground hover:text-pink-500 transition-colors duration-200"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
